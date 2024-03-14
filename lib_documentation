@@ -1,0 +1,15 @@
+
+
+Berikut adalah library utama yang digunakan dalam mini project beserta kegunaannya:
+
+1. Flask3.0.2 : Framework untuk membuat aplikasi web dalam bahasa pemrograman Python.
+2. Flask-Cors4.0.0 : Menambahkan dukungan CORS (Cross-Origin Resource Sharing) dalam aplikasi web Flask.
+3. Flask-Migrate4.0.5 : Memudahkan manajemen perubahan skema database dalam aplikasi web Flask menggunakan SQLAlchemy.
+4. Flask-RESTful0.3.10 : Membantu pembuatan API RESTful dalam aplikasi web Flask.
+5. flask-sieve2.0.1 : Mempermudah validasi data input pada permintaan HTTP.
+6. Flask-SQLAlchemy3.1.1 : Menyediakan integrasi antara Flask dan SQLAlchemy untuk keperluan basis data.
+7. PyMySQL1.1.0 : Driver yang menghubungkan basis data MySQL dari Python.
+8. python-dotenv1.0.1  : Memuat variabel lingkungan dari file .env ke dalam environment saat aplikasi dimuat.
+9. requests2.31.0 : Untuk membuat permintaan HTTP dengan Python.
+10. SQLAlchemy2.0.28 : Tool untuk berinteraksi dengan basis data dalam Python.
+
