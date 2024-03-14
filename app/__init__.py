@@ -52,6 +52,10 @@ def init_app(name, config=None):
     
     #Coba Routing
     #index
+    @app.route('/')
+    def dasar():
+        return render_template('index.html')
+    
     @app.route('/pokemon')
     def index():
         return render_template('index.html')
