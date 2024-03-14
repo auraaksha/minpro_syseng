@@ -4897,3 +4897,533 @@ sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't co
 [2024-03-14 08:30:19,227] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 08:30:19] "[36mGET /pokemon/poke/charmeleon/review?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
 [2024-03-14 08:30:19,227] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 08:30:19] "[36mGET /pokemon/poke/charmeleon/review?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
 [2024-03-14 08:30:19,258] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 08:30:19] "[36mGET /pokemon/poke/charmeleon/review?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-03-14 09:04:59,216] INFO in _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.12:8000
+[2024-03-14 09:04:59,217] INFO in _internal: [33mPress CTRL+C to quit[0m
+[2024-03-14 09:04:59,220] INFO in _internal:  * Restarting with stat
+[2024-03-14 09:05:00,349] WARNING in _internal:  * Debugger is active!
+[2024-03-14 09:05:00,367] INFO in _internal:  * Debugger PIN: 436-785-038
+[2024-03-14 09:06:00,574] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 09:06:00] "GET / HTTP/1.1" 200 -
+[2024-03-14 09:06:00,645] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 09:06:00] "[33mGET /static/css/main.css HTTP/1.1[0m" 404 -
+[2024-03-14 09:06:06,691] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 09:06:06] "GET /pokemon/poke HTTP/1.1" 200 -
+[2024-03-14 09:06:06,717] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 09:06:06] "[33mGET /static/css/main.css HTTP/1.1[0m" 404 -
+[2024-03-14 09:06:11,976] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 09:06:11] "GET /pokemon/poke/charizard HTTP/1.1" 200 -
+[2024-03-14 09:06:11,997] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 09:06:11] "[33mGET /static/css/main.css HTTP/1.1[0m" 404 -
+[2024-03-14 09:06:24,509] ERROR in review: Traceback (most recent call last):
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "C:\Users\auraa\AppData\Local\Programs\Python\Python310\lib\socket.py", line 845, in create_connection
+    raise err
+  File "C:\Users\auraa\AppData\Local\Programs\Python\Python310\lib\socket.py", line 833, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 3303, in raw_connection
+    return self.pool.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 358, in __init__
+    self.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'ois.cbzc4zqh8ggj.ap-southeast-1.rds.amazonaws.com' (timed out)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\syseng\minpro_syseng\app\apis\pokemon\resources\poke\review.py", line 60, in get
+    reviews = PokeReview.query.filter_by(pokemon_name=name).all()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 2306, in execute
+    return self._execute_internal(
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 2181, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 2050, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 1144, in _connection_for_bind
+    conn = bind.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 3279, in connect
+    return self._connection_cls(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 2443, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 3303, in raw_connection
+    return self.pool.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 358, in __init__
+    self.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 711, in connect
+    raise exc
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'ois.cbzc4zqh8ggj.ap-southeast-1.rds.amazonaws.com' (timed out)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+[2024-03-14 09:06:24,560] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 09:06:24] "[35m[1mGET /pokemon/poke/charizard/review HTTP/1.1[0m" 500 -
+[2024-03-14 09:06:30,793] ERROR in review: Traceback (most recent call last):
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "C:\Users\auraa\AppData\Local\Programs\Python\Python310\lib\socket.py", line 845, in create_connection
+    raise err
+  File "C:\Users\auraa\AppData\Local\Programs\Python\Python310\lib\socket.py", line 833, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 3303, in raw_connection
+    return self.pool.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 358, in __init__
+    self.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'ois.cbzc4zqh8ggj.ap-southeast-1.rds.amazonaws.com' (timed out)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\syseng\minpro_syseng\app\apis\pokemon\resources\poke\review.py", line 60, in get
+    reviews = PokeReview.query.filter_by(pokemon_name=name).all()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\query.py", line 2673, in all
+    return self._iter().all()  # type: ignore
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 2306, in execute
+    return self._execute_internal(
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 2181, in _execute_internal
+    conn = self._connection_for_bind(bind)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 2050, in _connection_for_bind
+    return trans._connection_for_bind(engine, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 1144, in _connection_for_bind
+    conn = bind.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 3279, in connect
+    return self._connection_cls(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 2443, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 3303, in raw_connection
+    return self.pool.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 358, in __init__
+    self.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 711, in connect
+    raise exc
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'ois.cbzc4zqh8ggj.ap-southeast-1.rds.amazonaws.com' (timed out)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+[2024-03-14 09:06:30,837] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 09:06:30] "[35m[1mGET /pokemon/poke/charizard/review HTTP/1.1[0m" 500 -
+[2024-03-14 09:06:30,932] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 09:06:30] "GET /pokemon/poke/charizard/review?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2024-03-14 09:06:30,934] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 09:06:30] "GET /pokemon/poke/charizard/review?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2024-03-14 09:06:30,973] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 09:06:30] "GET /pokemon/poke/charizard/review?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2024-03-14 09:06:30,986] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 09:06:30] "[36mGET /pokemon/poke/charizard/review?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-03-14 09:08:02,829] ERROR in review: Traceback (most recent call last):
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "C:\Users\auraa\AppData\Local\Programs\Python\Python310\lib\socket.py", line 845, in create_connection
+    raise err
+  File "C:\Users\auraa\AppData\Local\Programs\Python\Python310\lib\socket.py", line 833, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 3303, in raw_connection
+    return self.pool.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 358, in __init__
+    self.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'ois.cbzc4zqh8ggj.ap-southeast-1.rds.amazonaws.com' (timed out)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\syseng\minpro_syseng\app\apis\pokemon\resources\poke\review.py", line 38, in post
+    db.session.commit()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\scoping.py", line 597, in commit
+    return self._proxied.commit()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 1972, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 1257, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 1232, in _prepare_impl
+    self.session.flush()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 4296, in flush
+    self._flush(objects)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 4431, in _flush
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 4392, in _flush
+    flush_context.execute()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\persistence.py", line 60, in save_obj
+    for (
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\persistence.py", line 223, in _organize_states_for_save
+    for state, dict_, mapper, connection in _connections_for_states(
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\persistence.py", line 1753, in _connections_for_states
+    connection = uowtransaction.transaction.connection(base_mapper)
+  File "<string>", line 2, in connection
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 994, in connection
+    return self._connection_for_bind(bind, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 1130, in _connection_for_bind
+    conn = self._parent._connection_for_bind(
+  File "<string>", line 2, in _connection_for_bind
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 1144, in _connection_for_bind
+    conn = bind.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 3279, in connect
+    return self._connection_cls(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 2443, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 3303, in raw_connection
+    return self.pool.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 358, in __init__
+    self.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 711, in connect
+    raise exc
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'ois.cbzc4zqh8ggj.ap-southeast-1.rds.amazonaws.com' (timed out)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+[2024-03-14 09:08:02,849] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 09:08:02] "[35m[1mPOST /pokemon/poke/charizard/review HTTP/1.1[0m" 500 -
+[2024-03-14 09:08:12,327] ERROR in review: Traceback (most recent call last):
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 644, in connect
+    sock = socket.create_connection(
+  File "C:\Users\auraa\AppData\Local\Programs\Python\Python310\lib\socket.py", line 845, in create_connection
+    raise err
+  File "C:\Users\auraa\AppData\Local\Programs\Python\Python310\lib\socket.py", line 833, in create_connection
+    sock.connect(sa)
+TimeoutError: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 3303, in raw_connection
+    return self.pool.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 358, in __init__
+    self.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 711, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'ois.cbzc4zqh8ggj.ap-southeast-1.rds.amazonaws.com' (timed out)")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\syseng\minpro_syseng\app\apis\pokemon\resources\poke\review.py", line 38, in post
+    db.session.commit()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\scoping.py", line 597, in commit
+    return self._proxied.commit()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 1972, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 1257, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 1232, in _prepare_impl
+    self.session.flush()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 4296, in flush
+    self._flush(objects)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 4431, in _flush
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 4392, in _flush
+    flush_context.execute()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\persistence.py", line 60, in save_obj
+    for (
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\persistence.py", line 223, in _organize_states_for_save
+    for state, dict_, mapper, connection in _connections_for_states(
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\persistence.py", line 1753, in _connections_for_states
+    connection = uowtransaction.transaction.connection(base_mapper)
+  File "<string>", line 2, in connection
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 994, in connection
+    return self._connection_for_bind(bind, execution_options)
+  File "<string>", line 2, in _connection_for_bind
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 1130, in _connection_for_bind
+    conn = self._parent._connection_for_bind(
+  File "<string>", line 2, in _connection_for_bind
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\orm\session.py", line 1144, in _connection_for_bind
+    conn = bind.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 3279, in connect
+    return self._connection_cls(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 147, in __init__
+    Connection._handle_dbapi_exception_noconnection(
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 2443, in _handle_dbapi_exception_noconnection
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 145, in __init__
+    self._dbapi_connection = engine.raw_connection()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\base.py", line 3303, in raw_connection
+    return self.pool.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
+    return _ConnectionFairy._checkout(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
+    rec = pool._do_get()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\impl.py", line 179, in _do_get
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\impl.py", line 177, in _do_get
+    return self._create_connection()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 390, in _create_connection
+    return _ConnectionRecord(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 674, in __init__
+    self.__connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 900, in __connect
+    with util.safe_reraise():
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\util\langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\pool\base.py", line 896, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\create.py", line 643, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\sqlalchemy\engine\default.py", line 616, in connect
+    return self.loaded_dbapi.connect(*cargs, **cparams)
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 358, in __init__
+    self.connect()
+  File "D:\syseng\minpro_syseng\venv_flask\lib\site-packages\pymysql\connections.py", line 711, in connect
+    raise exc
+sqlalchemy.exc.OperationalError: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'ois.cbzc4zqh8ggj.ap-southeast-1.rds.amazonaws.com' (timed out)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+[2024-03-14 09:08:12,342] INFO in _internal: 192.168.1.12 - - [14/Mar/2024 09:08:12] "[35m[1mPOST /pokemon/poke/charizard/review HTTP/1.1[0m" 500 -

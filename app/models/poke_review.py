@@ -8,8 +8,8 @@ class PokeReview(db.Model):
     #title = db.Column(db.String, nullable=False)
     content = db.Column(db.String, nullable=False)
     pokemon_name = db.Column(db.String, nullable=False)
-    ##user_ip = db.Column(db.String, nullable=False)
-    ##user_agent = db.Column(db.String, nullable=False)
+    user_ip = db.Column(db.String, nullable=False)
+    user_agent = db.Column(db.String, nullable=False)
     #created_at = db.Column(db.DateTime, default=db.func.current_timestamp())
     #updated_at = db.Column(
     #    db.DateTime, nullable=True, onupdate=db.func.current_timestamp()

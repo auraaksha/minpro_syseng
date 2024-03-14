@@ -31,8 +31,8 @@ class Review(Resource):
                     #title=request.json['title'],
                     content=request.json['content'],
                     pokemon_name = name,
-                    #user_ip=request.remote_addr,
-                    #user_agent=request.user_agent.string
+                    user_ip=request.remote_addr,
+                    user_agent=request.user_agent.string
                 )
                 db.session.add(user)
                 db.session.commit()
@@ -65,8 +65,8 @@ class Review(Resource):
                     #'title': review.title,
                     'content': review.content,
                     'pokemon_name': review.pokemon_name,
-                    #'user_ip': review.user_ip,
-                    #'user_agent': review.user_agent,
+                    'user_ip': review.user_ip,
+                    'user_agent': review.user_agent,
                     #'created_at': review.created_at,
                     #'updated_at': review.updated_at
                 } for review in reviews]
