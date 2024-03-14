@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+<!-- 
+{% block title %}
+Pokemon
+{% endblock%} -->
+
+{% block body %}
+<div>
+    <h1>Pokemon Reviews</h1>
+    <!-- data: kumpulan review(id,content, name) 
+        gabisa langsung akses  data['pokemon_name'] }} -->
+    {% if not review %}
+    <p> There's no review yet!</p>
+    <button onclick="history.back();">Go Back</button>
+    
+    {% else %}
+    <p> Here are some of the things people say about {{ review[0]['pokemon_name'] }} :</p>
+    <ul>
+        {% for item in review %}
+            <li>{{ item['content'] }}</li>
+        {% endfor %}
+    </ul>
+    
+    {% endif %}
+    <!-- {{review}}  -->
+</div>
+
+{% endblock%}

@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+<!-- 
+{% block title %}
+Pokemon
+{% endblock%} -->
+
+{% block body %}
+<div class="content">
+    <h1>Pokemon Database</h1>
+    <label for="typeFilter">Filter by Type:</label>
+    <select id="typeFilter">
+        <option value="all">All Types</option>
+        <option value="normal">Normal</option>
+        <option value="fighting">Fighting</option>
+        <option value="flying">Flying</option>
+        <option value="poison">Poison</option>
+        <option value="ground">Ground</option>
+        <option value="rock">Rock</option>
+        <option value="bug">Bug</option>
+        <option value="ghost">Ghost</option>
+        <option value="steel">Steel</option>
+        <option value="fire">Fire</option>
+        <option value="water">Water</option>
+        <option value="grass">Grass</option>
+        <option value="electric">Electric</option>
+        <option value="psychic">Psychic</option>
+        <option value="ice">Ice</option>
+        <option value="dragon">Dragon</option>
+        <option value="dark">Dark</option>
+        <option value="fairy">Fairy</option>
+    </select>
+    <br>
+    <table id="pokemonTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Types</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pokemon in pokemons %}
+            <tr id="{{ pokemon['name'] }}">
+                <td>{{ pokemon['name'] }}</td>
+                <td>{{ pokemon['types']}}</td>
+                <td><a href="/pokemon/poke/{{ pokemon['name'] }}">Detail</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        function filterPokemonByType() {
+            var type = document.getElementById("typeFilter").value;
+            var tableRows = document.querySelectorAll("#pokemonTable tbody tr");
+
+            tableRows.forEach(function(row) {
+                var types = row.cells[1].textContent;
+                if (type === "all" || types.includes(type)) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+
+        // Event listener for type filter change
+        document.getElementById("typeFilter").addEventListener("change", filterPokemonByType);
+    </script>
+</div>
+{% endblock%}

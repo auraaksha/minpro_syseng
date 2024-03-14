@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+<!-- 
+{% block title %}
+Pokemon
+{% endblock%} -->
+
+{% block body %}
+<div class="content">
+    <h1>Pokemon Information</h1>
+    <img src="{{ pokedetails['sprite'] }}" alt="{{ pokedetails['name'] }} Sprite">
+    <p><strong>Name:</strong> {{ pokedetails['name'] }}</p>
+     <!-- karena ada yang typenya lebih dari satu. abilities juga. jadi loop  -->
+    <!-- <p><strong>Types:</strong> {% for type in pokedetails['types'] %} {{ type }} {% endfor %}</p> -->
+    <p><strong>Types:</strong> {{ pokedetails['types'] | join(', ') }}</p>
+    <!-- <p><strong>Abilities:</strong> {% for ability in pokedetails['abilities'] %} {{ ability }} {% endfor %}</p> -->
+    <p><strong>Abilities:</strong> {{ pokedetails['abilities'] | join(', ') }}</p>
+    
+    <form id="reviewForm" action="/pokemon/poke/{{ pokedetails['name'] }}/review" method="post">
+        <div>
+            <label for="content">Add review:</label><br>
+            <textarea id="content" name="content" rows="4" cols="50"></textarea>
+            <span id="contentError" class="error"></span>
+        </div>
+        <!-- Add more fields as needed (e.g., star rating, title) -->
+        <br>
+        <button type="submit">Add Review</button>
+    </form>
+    <a href="/pokemon/poke/{{ pokedetails['name'] }}/review">See Reviews</a>
+
+    <script>
+        document.getElementById('reviewForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            clearErrors();
+
+            var content = document.getElementById('content').value.trim();
+
+            if (!content) {
+                document.getElementById('contentError').innerText = 'Review cannot be empty';
+                return;
+            }
+            
+            var pokename = "{{ pokedetails['name']}}";
+            // FETCH API
+            fetch('/pokemon/poke/'+ pokename + '/review', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ content: content })
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Failed to submit review');
+                }
+            })
+            .then(data => {
+                alert('Review added!');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while submitting the review');
+            });
+        });
+
+        function clearErrors() {
+            var errorElements = document.getElementsByClassName('error');
+            Array.from(errorElements).forEach(function(element) {
+                element.innerText = '';
+            });
+        }
+    </script>
+</div>
+
+{% endblock%}
